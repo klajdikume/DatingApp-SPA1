@@ -30,6 +30,7 @@ import { MemberEditResolver } from './_resolver/member-edit.resolver copy';
 import { UserService } from './_services/user.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { AlertifyService } from './_services/alertify.service';
+import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
 
 
 export function tokenGetter(){
@@ -87,7 +88,8 @@ export class CustomHammerConfig extends HammerGestureConfig{
       AuthGuard,
       UserService,
       { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig },
-      MemberEditResolver
+      MemberEditResolver,
+      PreventUnsavedChanges
    ],
    bootstrap: [
       AppComponent
