@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { JwtModule } from '@auth0/angular-jwt';
 import { from, config } from 'rxjs';
 import { NgxGalleryModule } from 'ngx-gallery';
+import { FileUploadModule } from 'ng2-file-upload';
 
 
 
@@ -31,6 +32,8 @@ import { UserService } from './_services/user.service';
 import { AuthGuard } from './_guards/auth.guard';
 import { AlertifyService } from './_services/alertify.service';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+
 
 
 export function tokenGetter(){
@@ -56,7 +59,8 @@ export class CustomHammerConfig extends HammerGestureConfig{
       MessagesComponent,
       MemberCardComponent,
       MemberDetailComponent,
-      MemberEditComponent
+      MemberEditComponent,
+      PhotoEditorComponent,
    ],
    imports: [
       BrowserModule,
@@ -67,6 +71,7 @@ export class CustomHammerConfig extends HammerGestureConfig{
       TabsModule.forRoot(),
       RouterModule.forRoot(appRoutes),
       NgxGalleryModule,
+      FileUploadModule,
       JwtModule.forRoot
       (
          {
