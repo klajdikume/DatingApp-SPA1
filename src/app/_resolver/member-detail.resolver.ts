@@ -10,6 +10,7 @@ import { catchError } from 'rxjs/operators';
 
 export class MemberDetailResolver implements Resolve<User> {
 
+
         constructor(
         private userService: UserService,
         private router: Router,
