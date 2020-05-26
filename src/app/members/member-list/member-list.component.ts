@@ -29,7 +29,7 @@ export class MemberListComponent implements OnInit {
       this.pagination = data['users'].pagination;
     });
 
-    this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
+    //this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
     this.userParams.minAge = 19;
     this.userParams.maxAge = 99;
     this.userParams.orderBt = 'lastActive';
@@ -41,7 +41,7 @@ export class MemberListComponent implements OnInit {
   }
 
   resetFilters(){
-    this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
+   //this.userParams.gender = this.user.gender === 'female' ? 'male' : 'female';
     this.userParams.minAge = 19;
     this.userParams.maxAge = 99;
     this.loadUsers();
